@@ -1,0 +1,3 @@
+
+void menuEvents();
+void gameEvents();
