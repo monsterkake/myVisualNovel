@@ -1,10 +1,10 @@
 #include "game.h"
-#include "init.h"
+#include "resHolder.h"
 
 int main()
 {
+	resHolder.init();
 	game.playMusic();
-	loadResourses();
 	game.createWindow();
 	game.changeState('m');
 	game.mainLoop();

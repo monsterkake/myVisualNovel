@@ -33,17 +33,9 @@
     <ClCompile Include="button.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="init.cpp">
+    <ClCompile Include="resHolder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="button_1.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="menuBG.jpg">
-      <Filter>Resource Files</Filter>
-    </Image>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="draw.h">
@@ -61,7 +53,7 @@
     <ClInclude Include="button.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="init.h">
+    <ClInclude Include="resHolder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

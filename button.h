@@ -10,7 +10,7 @@ public:
 	sf::Sprite sprite;
 	std::string text;
 
-	void drawSelf(int, int, char);
+	void drawSelf(int, int, sf::Texture);
 };
 
 extern Button exitButton;

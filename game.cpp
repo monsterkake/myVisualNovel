@@ -2,6 +2,7 @@
 #include "menu.h"
 #include "events.h"
 #include "draw.h"
+#include "resHolder.h"
 
 Game game;
 
@@ -23,9 +24,8 @@ void Game::changeState(char mode)
 
 void Game::playMusic()
 {
-	track.openFromFile("resourses/AaronSmithDancin.ogg");
-	track.play();
-	track.setVolume(10);
+	resHolder.track.play();
+	resHolder.track.setVolume(10);
 }
 
 void Game::drawSprite(sf::Sprite sprite)

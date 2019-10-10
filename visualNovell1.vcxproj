@@ -15,20 +15,16 @@
     <ClCompile Include="draw.cpp" />
     <ClCompile Include="events.cpp" />
     <ClCompile Include="game.cpp" />
-    <ClCompile Include="init.cpp" />
+    <ClCompile Include="resHolder.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="button_1.png" />
-    <Image Include="menuBG.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="button.h" />
     <ClInclude Include="draw.h" />
     <ClInclude Include="events.h" />
     <ClInclude Include="game.h" />
-    <ClInclude Include="init.h" />
+    <ClInclude Include="resHolder.h" />
     <ClInclude Include="menu.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
