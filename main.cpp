@@ -6,7 +6,7 @@ int main()
 	resHolder.init();
 	game.playMusic();
 	game.createWindow();
-	game.changeState('m');
+	game.changeState("menu");
 	game.mainLoop();
 	return 0;
 }

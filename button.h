@@ -17,3 +17,6 @@ extern Button exitButton;
 extern Button alphaButton;
 extern Button nextButton;
 extern Button backButton;
+extern Button decisionButton_1;
+extern Button decisionButton_2;
+extern Button decisionButton_3;

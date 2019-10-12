@@ -6,6 +6,8 @@
 
 Game game;
 
+int countOfLoactions = 3;
+
 void Game::createWindow()
 {
 	m_window.create( sf::VideoMode(), "main", sf::Style::Fullscreen );
@@ -17,7 +19,7 @@ void Game::closeWindow()
 	m_window.close();
 }
 
-void Game::changeState(char mode)
+void Game::changeState(sf::String mode)
 {
 		gameState = mode;
 }
@@ -25,7 +27,8 @@ void Game::changeState(char mode)
 void Game::playMusic()
 {
 	resHolder.track.play();
-	resHolder.track.setVolume(10);
+	resHolder.track.setVolume(1);
+	resHolder.track.setLoop(true);
 }
 
 void Game::drawSprite(sf::Sprite sprite)
@@ -33,30 +36,37 @@ void Game::drawSprite(sf::Sprite sprite)
 	m_window.draw(sprite);
 }
 
-void Game::eventProcessing()
+void Game::eventProcessing(sf::String state)
 {
-	while (m_window.pollEvent(event))
-	{
-		if (gameState == 'm')
-			menuEvents();
-		if (gameState == 'g')
-			gameEvents();
-	}
+	
+}
+
+void Game::checkMate()
+{
+	if (currentloaction == 2)
+		gameState = "decision";
 }
 
 void Game::mainLoop()
 {
 	while (m_window.isOpen())
 	{
-		switch (gameState)
+		if (gameState == "menu")
 		{
-		case 'm':
 			menu.drawMenu();
-			break;
-		case 'g':
-			drawScene();
-			break;
+			menuEvents();
 		}
-		eventProcessing();
+		if (gameState == "game")
+		{
+			drawScene();
+			
+			gameEvents();
+		}
+		if (gameState == "decision")
+		{
+			drawScene();
+			decisionEvents();
+		}
+		checkMate();
 	}	
 }

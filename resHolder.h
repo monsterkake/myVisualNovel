@@ -1,4 +1,4 @@
-#include <string>
+
 #include <iostream>
 #include <SFML/OpenGL.hpp>
 #include <SFML/Network.hpp>
@@ -14,10 +14,12 @@ public:
 	sf::Texture nextButton;
 	sf::Texture backButton;
 	sf::Texture menuBG;
+	sf::Texture locations[5];
 
 	sf::Music track;
 
 	void init();
+	void loadLocations();
 };
 
 extern ResHolder resHolder;

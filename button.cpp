@@ -13,3 +13,6 @@ Button exitButton;
 Button alphaButton;
 Button nextButton;
 Button backButton;
+Button decisionButton_1;
+Button decisionButton_2;
+Button decisionButton_3;
