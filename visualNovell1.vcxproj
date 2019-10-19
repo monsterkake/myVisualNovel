@@ -12,18 +12,22 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="button.cpp" />
+    <ClCompile Include="currentSave.cpp" />
     <ClCompile Include="draw.cpp" />
     <ClCompile Include="events.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="resHolder.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
+    <ClCompile Include="page.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="button.h" />
+    <ClInclude Include="currentSave.h" />
     <ClInclude Include="draw.h" />
     <ClInclude Include="events.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="page.h" />
     <ClInclude Include="resHolder.h" />
     <ClInclude Include="menu.h" />
   </ItemGroup>

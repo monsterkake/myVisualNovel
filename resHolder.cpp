@@ -1,5 +1,5 @@
 #include "resHolder.h"
-
+#include "page.h"
 
 ResHolder resHolder;
 
@@ -14,8 +14,8 @@ void ResHolder::init()
 	menuBG.loadFromFile("resourses/menuBG.jpg");
 
 	track.openFromFile("resourses/AaronSmithDancin.ogg");
+	font.loadFromFile("resourses/ALGER.TTF");
 	loadLocations();
-
 	std::cout << "resourses loaded" << std::endl;
 }
 
@@ -30,7 +30,9 @@ void ResHolder::loadLocations()
 		string += "resourses/locations/";
 		string += number;
 		string += ".png";
-		locations[i].loadFromFile(string);
+		//locations[i].loadFromFile(string);
+		pages[i].setPicture(string);
+		pages[i].loadText(sf::String("texttexttexttexttexttext"));
 	}
 	
 	//locations[1].loadFromFile("resourses/locations/1.png");

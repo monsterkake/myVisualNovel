@@ -3,10 +3,21 @@
 #include "events.h"
 #include "draw.h"
 #include "resHolder.h"
+#include "currentSave.h"
 
 Game game;
 
 int countOfLoactions = 3;
+
+Game::Game()
+{
+	for (int i = 0; i < countOfLoactions; i++)
+		currentSave.decisions[i] = 0;
+	currentSave.framesAfterDec = 0;
+
+}
+
+Game::~Game(){}
 
 void Game::createWindow()
 {
@@ -36,14 +47,9 @@ void Game::drawSprite(sf::Sprite sprite)
 	m_window.draw(sprite);
 }
 
-void Game::eventProcessing(sf::String state)
-{
-	
-}
-
 void Game::checkMate()
 {
-	if (currentloaction == 2)
+	if (currentPage == 2)
 		gameState = "decision";
 }
 
@@ -59,7 +65,6 @@ void Game::mainLoop()
 		if (gameState == "game")
 		{
 			drawScene();
-			
 			gameEvents();
 		}
 		if (gameState == "decision")

@@ -15,6 +15,7 @@ void Menu::drawMenu()
 	drawMenuBG();
 	exitButton.drawSelf(game.m_window.getSize().x - 200, game.m_window.getSize().y - 100, resHolder.exitButton);
 	alphaButton.drawSelf(game.m_window.getSize().x - 200, game.m_window.getSize().y - 200, resHolder.alphaButton);
+
 	game.m_window.display();
 }
 

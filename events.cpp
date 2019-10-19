@@ -2,6 +2,7 @@
 #include "events.h"
 #include "menu.h"
 #include "button.h"
+#include "currentSave.h"
 
 void menuEvents()
 {
@@ -52,9 +53,9 @@ void gameEvents()
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
 				if (nextButton.sprite.getGlobalBounds().contains(sf::Mouse::getPosition(game.m_window).x, sf::Mouse::getPosition(game.m_window).y))
-					if (game.currentloaction < countOfLoactions)game.currentloaction++;
+					if (game.currentPage < countOfLoactions)game.currentPage++;
 				if (backButton.sprite.getGlobalBounds().contains(sf::Mouse::getPosition(game.m_window).x, sf::Mouse::getPosition(game.m_window).y))
-					if (game.currentloaction > 0)game.currentloaction--;
+					if (game.currentPage > 0)game.currentPage--;
 			}
 			break;
 
@@ -67,8 +68,6 @@ void decisionEvents()
 {
 	while (game.m_window.pollEvent(game.event))
 	{
-
-
 		switch (game.event.type)
 		{
 		case sf::Event::KeyPressed:
@@ -79,11 +78,48 @@ void decisionEvents()
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
 				if (decisionButton_1.sprite.getGlobalBounds().contains(sf::Mouse::getPosition(game.m_window).x, sf::Mouse::getPosition(game.m_window).y))
+				{
 					cout << "d1" << endl;
+					for (int i = 0; i < 100; i++)
+					{
+						if (currentSave.decisions[i] == 0)
+						{
+							currentSave.decisions[i] = 1;
+							break;
+						}
+					}
+					game.changeState("game");
+					game.currentPage++;
+				}
+					
 				if (decisionButton_2.sprite.getGlobalBounds().contains(sf::Mouse::getPosition(game.m_window).x, sf::Mouse::getPosition(game.m_window).y))
+				{
 					cout << "d2" << endl;
+					for (int i = 0; i < 100; i++)
+					{
+						if (currentSave.decisions[i] == 0)
+						{
+							currentSave.decisions[i] = 2;
+							break;
+						}
+					}
+					game.changeState("game");
+					game.currentPage++;
+				}
 				if (decisionButton_3.sprite.getGlobalBounds().contains(sf::Mouse::getPosition(game.m_window).x, sf::Mouse::getPosition(game.m_window).y))
+				{
 					cout << "d3" << endl;
+					for (int i = 0; i < 100; i++)
+					{
+						if (currentSave.decisions[i] == 0)
+						{
+							currentSave.decisions[i] = 3;
+							break;
+						}
+					}
+					game.changeState("game");
+					game.currentPage++;
+				}
 			}
 			break;
 

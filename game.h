@@ -12,11 +12,13 @@ using namespace std;
 class Game
 {
 public:
+	Game();
+	~Game();
 	sf::String gameState;
 	sf::RenderWindow m_window;
 	sf::Event event;
 	sf::Music track;
-	int currentloaction;
+	int currentPage;
 	
 	void playMusic();
 	void mainLoop();
@@ -24,11 +26,7 @@ public:
 	void changeState(sf::String);
 	void closeWindow();
 	void drawSprite(sf::Sprite);
-	void checkMate();
-	
-private:
-	void eventProcessing(sf::String);
-	
+	void checkMate();	
 };
 
 extern Game game;

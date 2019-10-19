@@ -3,7 +3,7 @@
 
 
 void drawScene();
-void drawTextBox();
-void drawCurrentLocation(sf::Texture);
+void drawTextBox(sf::Text);
+void drawCurrentPage(sf::Texture, sf::Text);
 void drawInterface();
 void drawDecisionOverlay();

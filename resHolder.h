@@ -18,6 +18,8 @@ public:
 
 	sf::Music track;
 
+	sf::Font font;
+
 	void init();
 	void loadLocations();
 };
