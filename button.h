@@ -5,16 +5,23 @@
 class Button
 {
 public:
-	sf::Vector2i position;
-	sf::Texture texture;
+	Button( sf::Texture );
+	Button::Button();
+
+	sf::Vector2f position;
 	sf::Sprite sprite;
 	std::string text;
 
-	void drawSelf(int, int, sf::Texture);
+	void drawSelf();
+	void setTexture(sf::Texture);
+	void setPosition(int, int);
+	bool isClicked();
 };
 
 extern Button exitButton;
-extern Button alphaButton;
+extern Button playButton;
+extern Button settingsButton;
+
 extern Button nextButton;
 extern Button backButton;
 extern Button decisionButton_1;

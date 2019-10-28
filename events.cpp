@@ -8,8 +8,6 @@ void menuEvents()
 {
 	while (game.m_window.pollEvent(game.event))
 	{
-
-
 		switch (game.event.type)
 		{
 		case sf::Event::Closed:
@@ -21,7 +19,7 @@ void menuEvents()
 			{
 				if (exitButton.sprite.getGlobalBounds().contains(sf::Mouse::getPosition(game.m_window).x, sf::Mouse::getPosition(game.m_window).y))
 					game.closeWindow();
-				if (alphaButton.sprite.getGlobalBounds().contains(sf::Mouse::getPosition(game.m_window).x, sf::Mouse::getPosition(game.m_window).y))
+				if (playButton.sprite.getGlobalBounds().contains(sf::Mouse::getPosition(game.m_window).x, sf::Mouse::getPosition(game.m_window).y))
 					game.changeState("game");
 				else cout << "a" << endl;
 			}

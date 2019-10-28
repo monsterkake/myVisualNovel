@@ -10,11 +10,12 @@ class ResHolder
 public:
 	sf::Texture button;
 	sf::Texture exitButton;
-	sf::Texture alphaButton;
+	sf::Texture playButton;
 	sf::Texture nextButton;
 	sf::Texture backButton;
 	sf::Texture menuBG;
 	sf::Texture locations[5];
+	sf::Texture settingsButton;
 
 	sf::Music track;
 

@@ -36,8 +36,8 @@ void drawTextBox(sf::Text text)
 void drawInterface()
 {
 	
-	nextButton.drawSelf(game.m_window.getSize().x - 200, game.m_window.getSize().y - 100, resHolder.backButton);
-	backButton.drawSelf(80, game.m_window.getSize().y - 100, resHolder.nextButton);
+	nextButton.drawSelf();
+	backButton.drawSelf();
 }
 
 void drawDecisionOverlay()
@@ -48,9 +48,9 @@ void drawDecisionOverlay()
 	rectangle.setFillColor(sf::Color(150, 120, 80, 100));
 	game.m_window.draw(rectangle);
 
-	decisionButton_1.drawSelf(rectangle.getPosition().x + 75.f, rectangle.getPosition().y + 150.f, resHolder.alphaButton);
-	decisionButton_2.drawSelf(rectangle.getPosition().x + 75.f, rectangle.getPosition().y + 250.f, resHolder.alphaButton);
-	decisionButton_3.drawSelf(rectangle.getPosition().x + 75.f, rectangle.getPosition().y + 350.f, resHolder.alphaButton);
+	decisionButton_1.drawSelf();
+	decisionButton_2.drawSelf();
+	decisionButton_3.drawSelf();
 	sf::Text text;
 	text.setString("100");
 	

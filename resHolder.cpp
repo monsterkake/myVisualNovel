@@ -1,18 +1,24 @@
 #include "resHolder.h"
 #include "page.h"
+#include <fstream>
+using namespace std;
 
 ResHolder resHolder;
 
 void ResHolder::init()
 {
-	
-	//button.loadFromFile();
+	button.loadFromFile("resourses/button_1.png");
 	exitButton.loadFromFile("resourses/exitButton.png");
-	alphaButton.loadFromFile("resourses/alphaButton.png");
+	playButton.loadFromFile("resourses/playButton.png");
 	nextButton.loadFromFile("resourses/nextButton.png");
 	backButton.loadFromFile("resourses/backButton.png");
-	menuBG.loadFromFile("resourses/menuBG.jpg");
+	settingsButton.loadFromFile("resourses/settingsButton.png");
+	//menuBG.loadFromFile("resourses/menuBG.jpg");
 
+	sf::FileInputStream stream;
+	stream.open("resourses/menuBG.jpg");
+	menuBG.loadFromStream(stream);
+	
 	track.openFromFile("resourses/AaronSmithDancin.ogg");
 	font.loadFromFile("resourses/ALGER.TTF");
 	loadLocations();
@@ -30,7 +36,6 @@ void ResHolder::loadLocations()
 		string += "resourses/locations/";
 		string += number;
 		string += ".png";
-		//locations[i].loadFromFile(string);
 		pages[i].setPicture(string);
 		pages[i].loadText(sf::String("texttexttexttexttexttext"));
 	}

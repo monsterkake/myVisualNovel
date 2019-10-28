@@ -27,6 +27,9 @@ public:
 	void closeWindow();
 	void drawSprite(sf::Sprite);
 	void checkMate();	
+	void createButtons();
 };
 
+
 extern Game game;
+

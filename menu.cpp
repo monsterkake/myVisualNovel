@@ -3,6 +3,7 @@
 #include "button.h"
 #include "resHolder.h"
 
+
 void Menu::drawMenuBG()
 {
 	menuBG.setTexture(resHolder.menuBG);
@@ -11,12 +12,16 @@ void Menu::drawMenuBG()
 
 void Menu::drawMenu()
 {
+	
 	game.m_window.clear();
 	drawMenuBG();
-	exitButton.drawSelf(game.m_window.getSize().x - 200, game.m_window.getSize().y - 100, resHolder.exitButton);
-	alphaButton.drawSelf(game.m_window.getSize().x - 200, game.m_window.getSize().y - 200, resHolder.alphaButton);
+
+	exitButton.drawSelf();
+	playButton.drawSelf();
+	settingsButton.drawSelf();
 
 	game.m_window.display();
 }
 
 Menu menu;
+
