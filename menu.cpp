@@ -12,14 +12,11 @@ void Menu::drawMenuBG()
 
 void Menu::drawMenu()
 {
-	
 	game.m_window.clear();
 	drawMenuBG();
-
 	exitButton.drawSelf();
 	playButton.drawSelf();
 	settingsButton.drawSelf();
-
 	game.m_window.display();
 }
 

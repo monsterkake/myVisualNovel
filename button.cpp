@@ -2,7 +2,7 @@
 #include "game.h"
 #include "resHolder.h"
 
-Button::Button( sf::Texture texture )
+Button::Button( sf::Texture &texture )
 {
 	//sprite.setTexture(texture);
 }
@@ -12,7 +12,7 @@ Button::Button(){}
 void Button::drawSelf()
 {
 	sprite.setPosition( position );
-	cout << sprite.getPosition().x << "  " << sprite.getPosition().y << endl;
+	//cout << sprite.getPosition().x << "  " << sprite.getPosition().y << endl;
 	//sprite.setTexture(resHolder.exitButton);
 	game.drawSprite(sprite);
 }
@@ -30,7 +30,9 @@ void Button::setPosition(int x, int y)
 
 bool Button::isClicked()
 {
-	return true;
+	//if (sprite.getGlobalBounds().contains(x, y)) return true;
+	if (sprite.getGlobalBounds().contains(sf::Mouse::getPosition(game.m_window).x, sf::Mouse::getPosition(game.m_window).y)) return true;
+	else return false;
 }
 
 Button exitButton;
@@ -42,8 +44,8 @@ Button backButton;
 Button decisionButton_1;
 Button decisionButton_2;
 Button decisionButton_3;
-
-/*Button exitButton( resHolder.exitButton );
+/*
+Button exitButton( resHolder.exitButton );
 Button playButton( resHolder.playButton );
 Button settingsButton( resHolder.settingsButton );
 
@@ -51,5 +53,6 @@ Button nextButton( resHolder.nextButton );
 Button backButton( resHolder.backButton );
 Button decisionButton_1( resHolder.button );
 Button decisionButton_2( resHolder.button );
-Button decisionButton_3( resHolder.button ); */
+Button decisionButton_3( resHolder.button ); 
 
+*/

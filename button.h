@@ -5,7 +5,7 @@
 class Button
 {
 public:
-	Button( sf::Texture );
+	Button( sf::Texture& );
 	Button::Button();
 
 	sf::Vector2f position;

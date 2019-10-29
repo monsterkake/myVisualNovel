@@ -38,7 +38,7 @@ void Game::createButtons()
 	decisionButton_1.setPosition(game.m_window.getSize().x / 2 - 75, 350);
 	decisionButton_2.setPosition(game.m_window.getSize().x / 2 - 75, 450);
 	decisionButton_3.setPosition(game.m_window.getSize().x / 2 - 75, 550);
-
+	
 	exitButton.sprite.setTexture(resHolder.exitButton);
 	playButton.sprite.setTexture(resHolder.playButton);
 	settingsButton.sprite.setTexture(resHolder.settingsButton);
@@ -48,7 +48,6 @@ void Game::createButtons()
 	decisionButton_1.sprite.setTexture(resHolder.button);
 	decisionButton_2.sprite.setTexture(resHolder.button);
 	decisionButton_3.sprite.setTexture(resHolder.button);
-
 }
 
 void Game::closeWindow()

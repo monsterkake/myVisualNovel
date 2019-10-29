@@ -17,11 +17,12 @@ void menuEvents()
 		case sf::Event::MouseButtonPressed:
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
-				if (exitButton.sprite.getGlobalBounds().contains(sf::Mouse::getPosition(game.m_window).x, sf::Mouse::getPosition(game.m_window).y))
+				if (exitButton.isClicked())
 					game.closeWindow();
-				if (playButton.sprite.getGlobalBounds().contains(sf::Mouse::getPosition(game.m_window).x, sf::Mouse::getPosition(game.m_window).y))
+				if (playButton.isClicked())
 					game.changeState("game");
-				else cout << "a" << endl;
+				if (settingsButton.isClicked())
+					cout << "a" << endl;
 			}
 			break;
 
@@ -50,9 +51,9 @@ void gameEvents()
 		case sf::Event::MouseButtonPressed:
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
-				if (nextButton.sprite.getGlobalBounds().contains(sf::Mouse::getPosition(game.m_window).x, sf::Mouse::getPosition(game.m_window).y))
+				if (nextButton.isClicked())
 					if (game.currentPage < countOfLoactions)game.currentPage++;
-				if (backButton.sprite.getGlobalBounds().contains(sf::Mouse::getPosition(game.m_window).x, sf::Mouse::getPosition(game.m_window).y))
+				if (backButton.isClicked())
 					if (game.currentPage > 0)game.currentPage--;
 			}
 			break;
@@ -75,7 +76,7 @@ void decisionEvents()
 		case sf::Event::MouseButtonPressed:
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
-				if (decisionButton_1.sprite.getGlobalBounds().contains(sf::Mouse::getPosition(game.m_window).x, sf::Mouse::getPosition(game.m_window).y))
+				if (decisionButton_1.isClicked())
 				{
 					cout << "d1" << endl;
 					for (int i = 0; i < 100; i++)
@@ -90,7 +91,7 @@ void decisionEvents()
 					game.currentPage++;
 				}
 					
-				if (decisionButton_2.sprite.getGlobalBounds().contains(sf::Mouse::getPosition(game.m_window).x, sf::Mouse::getPosition(game.m_window).y))
+				if (decisionButton_2.isClicked())
 				{
 					cout << "d2" << endl;
 					for (int i = 0; i < 100; i++)
@@ -104,7 +105,7 @@ void decisionEvents()
 					game.changeState("game");
 					game.currentPage++;
 				}
-				if (decisionButton_3.sprite.getGlobalBounds().contains(sf::Mouse::getPosition(game.m_window).x, sf::Mouse::getPosition(game.m_window).y))
+				if (decisionButton_3.isClicked())
 				{
 					cout << "d3" << endl;
 					for (int i = 0; i < 100; i++)
