@@ -1,19 +1,19 @@
 #include <SFML/OpenGL.hpp>
-#include <SFML/Network.hpp>
 #include <SFML/Graphics.hpp>
 
 class Button
 {
 public:
-	Button( sf::Texture& );
+	Button(sf::String);
 	Button::Button();
 
 	sf::Vector2f position;
 	sf::Sprite sprite;
-	std::string text;
+	sf::Text text;
 
 	void drawSelf();
 	void setTexture(sf::Texture);
+	void setTexture();
 	void setPosition(int, int);
 	bool isClicked();
 };
@@ -24,6 +24,8 @@ extern Button settingsButton;
 
 extern Button nextButton;
 extern Button backButton;
+extern Button menuButton;
+
 extern Button decisionButton_1;
 extern Button decisionButton_2;
 extern Button decisionButton_3;

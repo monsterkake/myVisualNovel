@@ -18,7 +18,7 @@ void drawCurrentPage(sf::Texture texture, sf::Text text)
 {
 	sf::Sprite sprite;
 	sprite.setTexture(texture);
-	game.drawSprite(sprite);
+	game.drawElement(sprite);
 	drawTextBox(text);
 }
 
@@ -28,16 +28,16 @@ void drawTextBox(sf::Text text)
 	rectangle.setSize(sf::Vector2f( float(game.m_window.getSize().x - 400.f) , 150.f ) );
 	rectangle.setPosition (sf::Vector2f( 200.f , float( game.m_window.getSize().y - 150.f ) ) );
 	rectangle.setFillColor(sf::Color(150, 120, 80, 100));
-	text.setPosition(sf::Vector2f(200.f, float(game.m_window.getSize().y - 150.f)));
-	game.m_window.draw(rectangle);
-	game.m_window.draw(text);
+	pages[game.currentPage].text.setPosition(sf::Vector2f(200.f, float(game.m_window.getSize().y - 150.f)));
+	game.drawElement(rectangle);
+	game.drawElement(pages[game.currentPage].text);
 }
 
 void drawInterface()
 {
-	
 	nextButton.drawSelf();
 	backButton.drawSelf();
+	menuButton.drawSelf();
 }
 
 void drawDecisionOverlay()
@@ -46,7 +46,7 @@ void drawDecisionOverlay()
 	rectangle.setSize(sf::Vector2f(300.f , 500.f));
 	rectangle.setPosition(sf::Vector2f(game.m_window.getSize().x / 2 - 150, 200.f));
 	rectangle.setFillColor(sf::Color(150, 120, 80, 100));
-	game.m_window.draw(rectangle);
+	game.drawElement(rectangle);
 
 	decisionButton_1.drawSelf();
 	decisionButton_2.drawSelf();

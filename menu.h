@@ -1,5 +1,4 @@
 #include <SFML/OpenGL.hpp>
-#include <SFML/Network.hpp>
 #include <SFML/Graphics.hpp>
 //#include "game.h"
 

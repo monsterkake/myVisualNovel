@@ -3,11 +3,10 @@
 #include "button.h"
 #include "resHolder.h"
 
-
 void Menu::drawMenuBG()
 {
 	menuBG.setTexture(resHolder.menuBG);
-	game.drawSprite(menuBG);
+	game.drawElement(menuBG);
 }
 
 void Menu::drawMenu()
@@ -21,4 +20,3 @@ void Menu::drawMenu()
 }
 
 Menu menu;
-

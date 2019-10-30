@@ -2,19 +2,25 @@
 #include "game.h"
 #include "resHolder.h"
 
-Button::Button( sf::Texture &texture )
+Button::Button( sf::String string )
 {
-	//sprite.setTexture(texture);
+	text.setString(string);
+	text.setScale(0.8, 1);
+	text.setFont(resHolder.font);
 }
 
-Button::Button(){}
+Button::Button()
+{ 
+	text.setFont(resHolder.font); 
+	text.setScale(1, 1);
+}
 
 void Button::drawSelf()
 {
 	sprite.setPosition( position );
-	//cout << sprite.getPosition().x << "  " << sprite.getPosition().y << endl;
-	//sprite.setTexture(resHolder.exitButton);
-	game.drawSprite(sprite);
+	       
+	game.drawElement(sprite);
+	game.drawElement(text);
 }
 
 void Button::setTexture(sf::Texture texture)
@@ -22,25 +28,33 @@ void Button::setTexture(sf::Texture texture)
 	sprite.setTexture(texture);
 }
 
+void Button::setTexture()
+{
+	sprite.setTexture(resHolder.button);
+}
+
 void Button::setPosition(int x, int y)
 {
 	position.x = x;
 	position.y = y;
+	
+	text.setPosition(x + (160-text.getLocalBounds().width)/2, y );
 }
 
 bool Button::isClicked()
 {
-	//if (sprite.getGlobalBounds().contains(x, y)) return true;
 	if (sprite.getGlobalBounds().contains(sf::Mouse::getPosition(game.m_window).x, sf::Mouse::getPosition(game.m_window).y)) return true;
 	else return false;
 }
 
-Button exitButton;
-Button playButton;
-Button settingsButton;
+Button exitButton("Exit");
+Button playButton( "Play" );
+Button settingsButton("Settings");
 
-Button nextButton;
-Button backButton;
+Button nextButton("Next");
+Button backButton("Back");
+Button menuButton("Menu");
+
 Button decisionButton_1;
 Button decisionButton_2;
 Button decisionButton_3;

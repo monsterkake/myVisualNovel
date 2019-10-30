@@ -5,6 +5,7 @@
 #include "resHolder.h"
 #include "currentSave.h"
 #include"button.h"
+#include "page.h"
 
 Game game;
 
@@ -15,7 +16,6 @@ Game::Game()
 	for (int i = 0; i < countOfLoactions; i++)
 		currentSave.decisions[i] = 0;
 	currentSave.framesAfterDec = 0;
-
 }
 
 Game::~Game(){}
@@ -23,7 +23,7 @@ Game::~Game(){}
 void Game::createWindow()
 {
 	m_window.create( sf::VideoMode(), "main", sf::Style::Fullscreen );
-	//m_window.create(sf::VideoMode(800,400), "main");
+	//m_window.create(sf::VideoMode(1024,920), "main");
 	createButtons();
 }
 
@@ -33,21 +33,25 @@ void Game::createButtons()
 	playButton.setPosition(game.m_window.getSize().x - 200, game.m_window.getSize().y - 200);
 	settingsButton.setPosition(game.m_window.getSize().x - 200, game.m_window.getSize().y - 300);
 
-	nextButton.setPosition(game.m_window.getSize().x - 200, game.m_window.getSize().y - 100);
-	backButton.setPosition(80, game.m_window.getSize().y - 100);
+	nextButton.setPosition(game.m_window.getSize().x - 190, game.m_window.getSize().y - 100);
+	backButton.setPosition(50, game.m_window.getSize().y - 100);
+	menuButton.setPosition(5,5);
+
 	decisionButton_1.setPosition(game.m_window.getSize().x / 2 - 75, 350);
 	decisionButton_2.setPosition(game.m_window.getSize().x / 2 - 75, 450);
 	decisionButton_3.setPosition(game.m_window.getSize().x / 2 - 75, 550);
 	
-	exitButton.sprite.setTexture(resHolder.exitButton);
-	playButton.sprite.setTexture(resHolder.playButton);
-	settingsButton.sprite.setTexture(resHolder.settingsButton);
+	exitButton.setTexture();
+	playButton.setTexture();
+	settingsButton.setTexture();
 
-	nextButton.sprite.setTexture(resHolder.nextButton);
-	backButton.sprite.setTexture(resHolder.backButton);
-	decisionButton_1.sprite.setTexture(resHolder.button);
-	decisionButton_2.sprite.setTexture(resHolder.button);
-	decisionButton_3.sprite.setTexture(resHolder.button);
+	nextButton.setTexture();
+	backButton.setTexture();
+	menuButton.setTexture();
+
+	decisionButton_1.setTexture();
+	decisionButton_2.setTexture();
+	decisionButton_3.setTexture();
 }
 
 void Game::closeWindow()
@@ -67,15 +71,30 @@ void Game::playMusic()
 	resHolder.track.setLoop(true);
 }
 
-void Game::drawSprite(sf::Sprite sprite)
+void Game::drawElement(sf::Sprite sprite)
 {
 	m_window.draw(sprite);
+}
+
+void Game::drawElement(sf::Text text)
+{
+	m_window.draw(text);
+}
+
+void Game::drawElement(sf::RectangleShape rect)
+{
+	m_window.draw(rect);
 }
 
 void Game::checkMate()
 {
 	if (currentPage == 2)
+	{
+		decisionButton_1.text.setString(pages[game.currentPage].decision_1);
+		decisionButton_2.text.setString(pages[game.currentPage].decision_2);
+		decisionButton_3.text.setString(pages[game.currentPage].decision_3);
 		gameState = "decision";
+	}
 }
 
 void Game::mainLoop()
@@ -91,12 +110,12 @@ void Game::mainLoop()
 		{
 			drawScene();
 			gameEvents();
+			checkMate();
 		}
 		if (gameState == "decision")
 		{
 			drawScene();
 			decisionEvents();
 		}
-		checkMate();
 	}	
 }

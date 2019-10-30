@@ -1,7 +1,6 @@
 //#include <string>
 #include <iostream>
 #include <SFML/OpenGL.hpp>
-#include <SFML/Network.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
@@ -25,7 +24,9 @@ public:
 	void createWindow();
 	void changeState(sf::String);
 	void closeWindow();
-	void drawSprite(sf::Sprite);
+	void drawElement(sf::Sprite);
+	void drawElement(sf::Text);
+	void drawElement(sf::RectangleShape);
 	void checkMate();	
 	void createButtons();
 };

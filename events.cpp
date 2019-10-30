@@ -40,8 +40,6 @@ void gameEvents()
 {
 	while (game.m_window.pollEvent(game.event))
 	{
-
-
 		switch (game.event.type)
 		{
 		case sf::Event::KeyPressed:
@@ -55,6 +53,8 @@ void gameEvents()
 					if (game.currentPage < countOfLoactions)game.currentPage++;
 				if (backButton.isClicked())
 					if (game.currentPage > 0)game.currentPage--;
+				if (menuButton.isClicked())
+					game.changeState("menu");
 			}
 			break;
 
