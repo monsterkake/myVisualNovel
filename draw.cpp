@@ -53,5 +53,4 @@ void drawDecisionOverlay()
 	decisionButton_3.drawSelf();
 	sf::Text text;
 	text.setString("100");
-	
 }

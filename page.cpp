@@ -2,7 +2,7 @@
 #include "resHolder.h"
 #include "button.h"
 
-Page pages[100];
+Page pages[COUNTOFPAGES];
 
 Page::Page()
 {
@@ -20,7 +20,8 @@ void Page::loadText(sf::String string)
 {
 	text.setFont(resHolder.font);
 	text.setString(string);
-	text.setOutlineColor(sf::Color(255, 255, 0, 255));
+	text.setOutlineThickness(1.5);
+	text.setOutlineColor(sf::Color::Black);
 	text.setCharacterSize(15);
-	text.setFillColor(sf::Color(255, 255, 0, 255));
+	text.setFillColor(sf::Color::Yellow);
 }

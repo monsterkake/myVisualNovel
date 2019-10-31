@@ -4,8 +4,13 @@
 
 Button::Button( sf::String string )
 {
+	sf::Color color;
+	color.Yellow;
+	text.setOutlineThickness(2);
+	text.setFillColor(sf::Color(200,100,50,255));
 	text.setString(string);
-	text.setScale(0.8, 1);
+	text.setCharacterSize(24);
+	text.setScale(1, 1);
 	text.setFont(resHolder.font);
 }
 
@@ -37,8 +42,7 @@ void Button::setPosition(int x, int y)
 {
 	position.x = x;
 	position.y = y;
-	
-	text.setPosition(x + (160-text.getLocalBounds().width)/2, y );
+	text.setPosition(x + (147-text.getLocalBounds().width)/2, y+3 );
 }
 
 bool Button::isClicked()
@@ -58,15 +62,3 @@ Button menuButton("Menu");
 Button decisionButton_1;
 Button decisionButton_2;
 Button decisionButton_3;
-/*
-Button exitButton( resHolder.exitButton );
-Button playButton( resHolder.playButton );
-Button settingsButton( resHolder.settingsButton );
-
-Button nextButton( resHolder.nextButton );
-Button backButton( resHolder.backButton );
-Button decisionButton_1( resHolder.button );
-Button decisionButton_2( resHolder.button );
-Button decisionButton_3( resHolder.button ); 
-
-*/

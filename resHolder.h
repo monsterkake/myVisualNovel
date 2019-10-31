@@ -16,7 +16,7 @@ public:
 	sf::Font font;
 
 	void init();
-	void loadLocations();
+	void loadPages();
 };
 
 extern ResHolder resHolder;

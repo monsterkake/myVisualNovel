@@ -16,26 +16,34 @@ void ResHolder::init()
 	
 	track.openFromFile("resourses/AaronSmithDancin.ogg");
 	font.loadFromFile("resourses/ALGER.TTF");
-	loadLocations();
+	loadPages();
 	std::cout << "resourses loaded" << std::endl;
 }
 
-void ResHolder::loadLocations()
+void ResHolder::loadPages()
 {
 	sf::String sfString;
-	std::string stdString;
-	char number;
-	for (int i = 0; i < 4; i++)
+	//std::string stdString;
+	char symbol;
+	char buffer[1];
+	ifstream file;
+	file.open("resourses/scenario.txt");
+	for (int i = 0; ( i < COUNTOFPAGES ) && !file.eof() ; i++)
 	{
-		stdString.clear();
-		stdString += "resourses/locations/";
-		stdString += to_string(i);
-		stdString += ".png";
-		pages[i].setPicture(stdString);
-
+		//if (file.eof())break;
 		sfString.clear();
-		sfString += "Text at page ";
-		sfString += to_string(i+1);;
+		sfString += "resourses/locations/";
+		sfString += to_string(i);
+		sfString += ".png";
+		pages[i].setPicture(sfString);
+		
+		sfString.clear();
+		file.read(buffer, 1);
+		while (buffer[0] != '$')
+		{
+			sfString += buffer[0];
+			file.read(buffer, 1);
+		} 
 		pages[i].loadText(sfString);
 	}
 }

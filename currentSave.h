@@ -2,8 +2,7 @@
 class Save
 {
 public:
-	int decisions[100];
-	int framesAfterDec;
+	int page;
 };
 
 extern Save currentSave;

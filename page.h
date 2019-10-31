@@ -2,6 +2,7 @@
 #include <SFML/OpenGL.hpp>
 #include <SFML/Graphics.hpp>
 
+#define COUNTOFPAGES 100
 
 class Page
 {
@@ -18,4 +19,4 @@ public:
 
 };
 
-extern Page pages[100];
+extern Page pages[COUNTOFPAGES];

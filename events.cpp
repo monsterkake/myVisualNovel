@@ -50,7 +50,7 @@ void gameEvents()
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
 				if (nextButton.isClicked())
-					if (game.currentPage < countOfLoactions)game.currentPage++;
+					if (game.currentPage < COUNTOFLOCATIONS)game.currentPage++;
 				if (backButton.isClicked())
 					if (game.currentPage > 0)game.currentPage--;
 				if (menuButton.isClicked())
@@ -79,43 +79,18 @@ void decisionEvents()
 				if (decisionButton_1.isClicked())
 				{
 					cout << "d1" << endl;
-					for (int i = 0; i < 100; i++)
-					{
-						if (currentSave.decisions[i] == 0)
-						{
-							currentSave.decisions[i] = 1;
-							break;
-						}
-					}
 					game.changeState("game");
 					game.currentPage++;
 				}
-					
 				if (decisionButton_2.isClicked())
 				{
 					cout << "d2" << endl;
-					for (int i = 0; i < 100; i++)
-					{
-						if (currentSave.decisions[i] == 0)
-						{
-							currentSave.decisions[i] = 2;
-							break;
-						}
-					}
 					game.changeState("game");
 					game.currentPage++;
 				}
 				if (decisionButton_3.isClicked())
 				{
 					cout << "d3" << endl;
-					for (int i = 0; i < 100; i++)
-					{
-						if (currentSave.decisions[i] == 0)
-						{
-							currentSave.decisions[i] = 3;
-							break;
-						}
-					}
 					game.changeState("game");
 					game.currentPage++;
 				}

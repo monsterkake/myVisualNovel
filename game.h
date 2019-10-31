@@ -1,10 +1,9 @@
-//#include <string>
 #include <iostream>
 #include <SFML/OpenGL.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
-extern int countOfLoactions;
+#define COUNTOFLOCATIONS 3
 
 using namespace std;
 
@@ -31,6 +30,4 @@ public:
 	void createButtons();
 };
 
-
 extern Game game;
-

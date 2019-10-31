@@ -9,13 +9,9 @@
 
 Game game;
 
-int countOfLoactions = 3;
-
 Game::Game()
 {
-	for (int i = 0; i < countOfLoactions; i++)
-		currentSave.decisions[i] = 0;
-	currentSave.framesAfterDec = 0;
+	
 }
 
 Game::~Game(){}
