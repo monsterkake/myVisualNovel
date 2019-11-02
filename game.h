@@ -17,6 +17,7 @@ public:
 	sf::Event event;
 	sf::Music track;
 	int currentPage;
+	bool isFullscreen = true;
 	
 	void playMusic();
 	void mainLoop();
@@ -27,7 +28,9 @@ public:
 	void drawElement(sf::Text);
 	void drawElement(sf::RectangleShape);
 	void checkMate();	
-	void createButtons();
+	void createWidgets();
+	void setFullScreenMode();
+	void setWindowedMode();
 };
 
 extern Game game;

@@ -9,8 +9,7 @@ void drawScene()
 	game.m_window.clear();
 	drawCurrentPage(pages[game.currentPage].picture, pages[game.currentPage].text);
 	drawInterface();
-	if (game.gameState == "decision")
-	drawDecisionOverlay();
+	if (game.gameState == "decision") drawDecisionOverlay();
 	game.m_window.display();
 }
 

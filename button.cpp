@@ -51,9 +51,11 @@ bool Button::isClicked()
 	else return false;
 }
 
-Button exitButton("Exit");
-Button playButton( "Play" );
+Button newGameButton("New game");
+Button continueButton( "Continue" );
+Button saveButton("save");
 Button settingsButton("Settings");
+Button exitButton("Exit");
 
 Button nextButton("Next");
 Button backButton("Back");

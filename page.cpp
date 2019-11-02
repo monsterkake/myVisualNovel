@@ -2,6 +2,7 @@
 #include "resHolder.h"
 #include "button.h"
 
+
 Page pages[COUNTOFPAGES];
 
 Page::Page()
@@ -9,6 +10,11 @@ Page::Page()
 	decision_1 = "1.";
 	decision_2 = "2.";
 	decision_3 = "3.";
+}
+
+void Page::draw()
+{
+	
 }
 
 void Page::setPicture(sf::String dir)

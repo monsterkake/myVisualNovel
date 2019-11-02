@@ -36,10 +36,10 @@
     <ClCompile Include="resHolder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="currentSave.cpp">
+    <ClCompile Include="page.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="page.cpp">
+    <ClCompile Include="checkBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -62,10 +62,10 @@
     <ClInclude Include="resHolder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="currentSave.h">
+    <ClInclude Include="page.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="page.h">
+    <ClInclude Include="checkBox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

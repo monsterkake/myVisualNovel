@@ -12,7 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="button.cpp" />
-    <ClCompile Include="currentSave.cpp" />
+    <ClCompile Include="checkBox.cpp" />
     <ClCompile Include="draw.cpp" />
     <ClCompile Include="events.cpp" />
     <ClCompile Include="game.cpp" />
@@ -23,7 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="button.h" />
-    <ClInclude Include="currentSave.h" />
+    <ClInclude Include="checkBox.h" />
     <ClInclude Include="draw.h" />
     <ClInclude Include="events.h" />
     <ClInclude Include="game.h" />

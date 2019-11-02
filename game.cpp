@@ -3,8 +3,8 @@
 #include "events.h"
 #include "draw.h"
 #include "resHolder.h"
-#include "currentSave.h"
-#include"button.h"
+#include "button.h"
+#include "checkBox.h"
 #include "page.h"
 
 Game game;
@@ -20,14 +20,16 @@ void Game::createWindow()
 {
 	m_window.create( sf::VideoMode(), "main", sf::Style::Fullscreen );
 	//m_window.create(sf::VideoMode(1024,920), "main");
-	createButtons();
+	createWidgets();
 }
 
-void Game::createButtons()
+void Game::createWidgets()
 {
+	newGameButton.setPosition(game.m_window.getSize().x - 200, game.m_window.getSize().y - 340);
+	continueButton.setPosition(game.m_window.getSize().x - 200, game.m_window.getSize().y - 280);
+	saveButton.setPosition(game.m_window.getSize().x - 200, game.m_window.getSize().y - 220);
+	settingsButton.setPosition(game.m_window.getSize().x - 200, game.m_window.getSize().y - 160);
 	exitButton.setPosition(game.m_window.getSize().x - 200, game.m_window.getSize().y - 100);
-	playButton.setPosition(game.m_window.getSize().x - 200, game.m_window.getSize().y - 200);
-	settingsButton.setPosition(game.m_window.getSize().x - 200, game.m_window.getSize().y - 300);
 
 	nextButton.setPosition(game.m_window.getSize().x - 190, game.m_window.getSize().y - 100);
 	backButton.setPosition(50, game.m_window.getSize().y - 100);
@@ -38,7 +40,9 @@ void Game::createButtons()
 	decisionButton_3.setPosition(game.m_window.getSize().x / 2 - 75, 550);
 	
 	exitButton.setTexture();
-	playButton.setTexture();
+	saveButton.setTexture();
+	newGameButton.setTexture();
+	continueButton.setTexture();
 	settingsButton.setTexture();
 
 	nextButton.setTexture();
@@ -48,6 +52,21 @@ void Game::createButtons()
 	decisionButton_1.setTexture();
 	decisionButton_2.setTexture();
 	decisionButton_3.setTexture();
+	///
+	fullScreenCheckBox.setPosition(500,500);
+	fullScreenCheckBox.setTexture(true);
+}
+
+void Game::setFullScreenMode()
+{
+	isFullscreen = true;
+	m_window.create(sf::VideoMode(), "main", sf::Style::Fullscreen);
+}
+
+void Game::setWindowedMode()
+{
+	isFullscreen = false;
+	m_window.create(sf::VideoMode(1024,920), "main");
 }
 
 void Game::closeWindow()
@@ -112,6 +131,11 @@ void Game::mainLoop()
 		{
 			drawScene();
 			decisionEvents();
+		}
+		if (gameState == "settings")
+		{
+			menu.drawMenu();
+			settingsEvents();
 		}
 	}	
 }

@@ -3,7 +3,7 @@
 
 int main()
 {
-	resHolder.init();
+	resHolder.loadResourses();
 	game.playMusic();
 	game.createWindow();
 	game.changeState("menu");

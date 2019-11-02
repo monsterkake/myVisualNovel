@@ -16,6 +16,7 @@ public:
 	void setPicture(sf::String);
 	void drawPicture();
 	void loadText(sf::String);
+	void draw();
 
 };
 

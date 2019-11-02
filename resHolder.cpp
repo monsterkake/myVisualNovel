@@ -6,9 +6,10 @@ using namespace std;
 
 ResHolder resHolder;
 
-void ResHolder::init()
+void ResHolder::loadResourses()
 {
 	button.loadFromFile("resourses/button_1.png");
+	checkBox.loadFromFile("resourses/checkBox.png");
 
 	sf::FileInputStream stream;
 	stream.open("resourses/menuBG.jpg");
@@ -46,4 +47,5 @@ void ResHolder::loadPages()
 		} 
 		pages[i].loadText(sfString);
 	}
+	file.close();
 }

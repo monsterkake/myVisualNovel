@@ -18,8 +18,10 @@ public:
 	bool isClicked();
 };
 
+extern Button saveButton;
 extern Button exitButton;
-extern Button playButton;
+extern Button continueButton;
+extern Button newGameButton;
 extern Button settingsButton;
 
 extern Button nextButton;

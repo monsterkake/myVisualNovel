@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <SFML/OpenGL.hpp>
 #include <SFML/Graphics.hpp>
@@ -9,13 +8,14 @@ class ResHolder
 public:
 	sf::Texture button;
 	sf::Texture menuBG;
+	sf::Texture checkBox;
 	sf::Texture locations[5];
 
 	sf::Music track;
 
 	sf::Font font;
 
-	void init();
+	void loadResourses();
 	void loadPages();
 };
 

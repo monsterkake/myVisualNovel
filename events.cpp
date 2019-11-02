@@ -2,7 +2,8 @@
 #include "events.h"
 #include "menu.h"
 #include "button.h"
-#include "currentSave.h"
+#include "checkBox.h"
+#include <fstream>
 
 void menuEvents()
 {
@@ -19,10 +20,23 @@ void menuEvents()
 			{
 				if (exitButton.isClicked())
 					game.closeWindow();
-				if (playButton.isClicked())
+				if (continueButton.isClicked())
 					game.changeState("game");
 				if (settingsButton.isClicked())
-					cout << "a" << endl;
+				{
+					game.changeState("settings");
+				}
+				if (newGameButton.isClicked())
+				{
+					game.currentPage = 0;
+					game.changeState("game");
+				}
+				if (saveButton.isClicked())
+				{
+					ofstream file;
+					file.open("saves.txt");
+					file<<game.currentPage << '$';
+				}
 			}
 			break;
 
@@ -98,6 +112,29 @@ void decisionEvents()
 			break;
 
 		default: break;
+		}
+	}
+}
+
+void settingsEvents()
+{
+	while (game.m_window.pollEvent(game.event))
+	{
+		switch (game.event.type)
+		{
+		case sf::Event::KeyPressed:
+			if (game.event.key.code == sf::Keyboard::Q)
+				game.closeWindow();
+		case sf::Event::MouseButtonPressed:
+			if (fullScreenCheckBox.isClicked())
+			{
+			/*	if (game.isFullscreen)
+					game.setWindowedMode();
+				else
+					game.setFullScreenMode(); */
+			}
+			break;
+		deafult: break;
 		}
 	}
 }
